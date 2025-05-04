@@ -1,0 +1,65 @@
+/* src/styles/variables.css */
+:root {
+    /* Цвета */
+    --color-primary: #8c9da5;
+    --color-secondary: #d8ccc0;
+    --color-accent: #b9aa9a;
+    --color-dark: #2c3135;
+    --color-light: #f4f3ef;
+    --color-text: #343434;
+    --color-text-light: #ffffff;
+    
+    /* Шрифты */
+    --font-family-main: "Golos Text", Helvetica, Arial, sans-serif;
+    
+    /* Размеры шрифтов */
+    --font-size-h1: 96px;
+    --font-size-h2: 72px;
+    --font-size-h3: 48px;
+    --font-size-h4: 36px;
+    --font-size-h5: 24px;
+    --font-size-subtitle: 20px;
+    --font-size-content: 16px;
+    
+    /* Веса шрифтов */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Межстрочные интервалы */
+    --line-height-h1: 110px;
+    --line-height-h2: 82px;
+    --line-height-h3: 56px;
+    --line-height-h4: 44px;
+    --line-height-h5: 32px;
+    --line-height-subtitle: 28px;
+    --line-height-content: 24px;
+    
+    /* Размеры экранов */
+    --screen-sm: 576px;
+    --screen-md: 768px;
+    --screen-lg: 992px;
+    --screen-xl: 1200px;
+    --screen-xxl: 1600px;
+    
+    /* Отступы */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    
+    /* Радиусы */
+    --radius-sm: 8px;
+    --radius-md: 20px;
+    --radius-lg: 40px;
+    
+    /* Тени */
+    --shadow-card: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-button: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  

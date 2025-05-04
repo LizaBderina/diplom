@@ -1,0 +1,167 @@
+/* src/components/common/styles.css */
+@import '../../styles/variables.css';
+
+.logo-component {
+  display: block;
+  height: 152px;
+  position: relative;
+  width: 132px;
+}
+
+.logo-component .vector {
+  height: 74px;
+  left: 24px;
+  position: absolute;
+  top: -2px;
+  width: 85px;
+}
+
+.logo-component .designer-studio {
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 194, 146, 1) 0%,
+    rgba(80, 69, 56, 1) 100%
+  );
+  background-clip: text;
+  color: transparent;
+  font-family: var(--font-family-main);
+  font-size: 10px;
+  font-weight: 700;
+  left: 1px;
+  letter-spacing: 3.90px;
+  line-height: 10px;
+  position: absolute;
+  -webkit-text-fill-color: transparent;
+  top: 90px;
+  white-space: nowrap;
+}
+
+.logo-component .designer-name {
+  color: var(--color-dark);
+  font-family: var(--font-family-main);
+  font-size: 18px;
+  font-weight: 500;
+  left: 0;
+  letter-spacing: 0.90px;
+  line-height: 22.1px;
+  position: absolute;
+  text-align: center;
+  top: 106px;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-icon-link {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+  transform: scale(1.1);
+}
+
+.social-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.consultation-form {
+  background-color: var(--color-secondary);
+  border-radius: 68px;
+  padding: 60px;
+  margin: 60px 0;
+}
+
+.consultation-form .form-container {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.consultation-form .form-title {
+  color: #504538;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.consultation-form .form-subtitle {
+  color: #504538;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.consultation-form .form-group {
+  margin-bottom: 30px;
+}
+
+.consultation-form input[type="text"],
+.consultation-form input[type="tel"] {
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 0 42px;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-h4);
+  color: #abaaae;
+}
+
+.consultation-form .form-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.consultation-form .form-checkbox input[type="checkbox"] {
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  margin-right: 15px;
+}
+
+.consultation-form .form-checkbox label {
+  color: #504538;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-h4);
+}
+
+.consultation-form .form-checkbox .underline {
+  text-decoration: underline;
+}
+
+.consultation-form .submit-button {
+  width: 100%;
+  height: 80px;
+  background-color: #504538;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  margin-top: 40px;
+  transition: all 0.3s ease;
+}
+
+.consultation-form .submit-button:hover {
+  opacity: 0.9;
+}

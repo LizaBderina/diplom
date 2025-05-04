@@ -1,0 +1,177 @@
+/* src/components/ui/Button/styles.css */
+@import '../../../styles/variables.css';
+
+.bt-back {
+  align-items: center;
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  height: 60px;
+  justify-content: center;
+  padding: 18px 49px;
+  position: relative;
+  width: 160px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bt-back .button-text-2 {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.bt-back.property-1-11-default {
+  background-color: var(--color-secondary);
+}
+
+.bt-back.property-1-11-variant-2 {
+  background-color: #000000;
+}
+
+.bt-back:hover {
+  opacity: 0.9;
+}
+
+.bt-next {
+  align-items: center;
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  height: 60px;
+  justify-content: center;
+  padding: 18px 49px;
+  position: relative;
+  width: 160px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bt-next .button-text {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.bt-next.property-1-10-default {
+  background-color: var(--color-secondary);
+}
+
+.bt-next.property-1-10-variant-2 {
+  background-color: #000000;
+}
+
+.bt-next:hover {
+  opacity: 0.9;
+}
+
+.bt-port {
+  align-items: center;
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  height: 60px;
+  justify-content: center;
+  padding: 20px 42px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bt-port .news-button-text {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.bt-port:hover {
+  opacity: 0.9;
+}
+
+.bt-soc {
+  align-items: center;
+  background-color: var(--color-dark);
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  height: 60px;
+  padding: 20px 42px;
+  position: relative;
+  cursor: pointer;
+}
+
+.bt-soc .social-media-text {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.bt-soc.default {
+  justify-content: space-around;
+  width: 177px;
+}
+
+.bt-soc.variant-2 {
+  justify-content: center;
+  width: 178px;
+}
+
+.social-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.bt-zak {
+  align-items: center;
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  height: 48px;
+  justify-content: center;
+  padding: 9px 36px;
+  position: relative;
+  width: 144px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bt-zak .order-text {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.bt-zak:hover {
+  opacity: 0.9;
+}

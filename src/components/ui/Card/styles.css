@@ -1,0 +1,121 @@
+/* src/components/ui/Card/styles.css */
+@import '../../../styles/variables.css';
+
+.news-card {
+  background-color: var(--color-secondary);
+  border-radius: 40px;
+  box-shadow: inset 0px 444px 17.6px rgba(0, 0, 0, 0.63);
+  display: block;
+  height: 380px;
+  position: relative;
+  width: 768px;
+  transition: all 0.3s ease;
+}
+
+.news-card .news-category {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  left: 295px;
+  position: absolute;
+  text-align: center;
+  top: 115px;
+  white-space: nowrap;
+}
+
+.news-card .news-title {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  left: 334px;
+  position: absolute;
+  text-align: center;
+  top: 211px;
+  white-space: nowrap;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: inset 0px 444px 17.6px rgba(0, 0, 0, 0.7);
+}
+
+.project-card {
+  background-color: var(--color-dark);
+  border-radius: 40px;
+  box-shadow: inset 0px 444px 17.6px rgba(0, 0, 0, 0.63);
+  display: block;
+  height: 380px;
+  position: relative;
+  width: 375px;
+  transition: all 0.3s ease;
+}
+
+.project-card .project-title {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  left: 100px;
+  position: absolute;
+  text-align: center;
+  top: 129px;
+  white-space: nowrap;
+}
+
+.project-card .project-description {
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  left: 139px;
+  position: absolute;
+  text-align: center;
+  top: 225px;
+  white-space: nowrap;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: inset 0px 444px 17.6px rgba(0, 0, 0, 0.7);
+}
+
+.rounded-rectangle {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 59px;
+  padding: 30px;
+  position: relative;
+  width: 254px;
+}
+
+.rounded-rectangle .user-message {
+  align-self: stretch;
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  position: relative;
+}
+
+.rounded-rectangle .user-name-2 {
+  align-self: stretch;
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+}
+
+.rounded-rectangle .message-background {
+  border: 2px solid;
+  border-color: #f4f3ef;
+  border-radius: 40px;
+  height: 172px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 254px;
+}
