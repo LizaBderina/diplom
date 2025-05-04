@@ -1,0 +1,114 @@
+/* src/styles/components/services-section.css */
+
+/* 1. Секция услуг */
+.services-section {
+  padding: 60px 0;
+  background-color: #f2efe8;
+}
+
+/* 2. Заголовок */
+.services-section .section-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #7e776c;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 0.05em;
+}
+
+/* 3. Сетка карточек */
+.services-grid {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 4. Карточка */
+.service-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;       /* порядок: номер сверху, контент снизу */
+  justify-content: space-between;
+  background-color: transparent;/* только обводка */
+  border: 1px solid #8C9DA5;
+  border-radius: 20px;
+  padding: 24px;
+  min-height: 320px;
+  box-sizing: border-box;
+}
+
+/* 5. Номер */
+.card-number {
+  font-size: 72px;
+  font-weight: 400;
+  color: rgba(124, 120, 112, 0.3);
+  margin: 0;                
+  align-self: flex-start;    
+  order: 0;                  
+}
+
+/* 6. Контент */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  order: 1;                  
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #5a5248;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.card-description {
+  font-size: 15px;
+  color: #7e776c;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 7. Обратный порядок для 2-й карточки */
+.services-grid > .service-card:nth-child(2) {
+  flex-direction: column-reverse;
+}
+
+/* 8. Адаптив: планшет */
+@media (max-width: 1024px) {
+  .services-grid {
+    flex-direction: column;
+    max-width: 600px;
+  }
+  .service-card {
+    min-height: auto;
+  }
+}
+
+/* 9. Адаптив: мобильные */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 40px 0;
+  }
+  .services-section .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .service-card {
+    padding: 20px;
+  }
+  .card-number {
+    font-size: 56px;
+  }
+  .card-content {
+    gap: 10px;
+  }
+  .card-title {
+    font-size: 18px;
+  }
+  .card-description {
+    font-size: 14px;
+  }
+}

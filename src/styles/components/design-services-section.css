@@ -1,0 +1,131 @@
+/* src/styles/components/design-services-section.css */
+
+.design-services-section {
+  padding: 60px 0;
+  background-color: #f2efe8;
+}
+
+.design-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 260px;
+  gap: 20px;
+}
+
+.design-service-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #dedace;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.design-service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Карточка с счетчиком */
+.design-service-card.counter {
+  background-color: #8C9DA5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.counter-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.counter-text {
+  font-size: 16px;
+  color: #ffffff;
+  max-width: 150px;
+  line-height: 1.4;
+}
+
+/* Большая карточка */
+.design-service-card.large {
+  grid-column: span 2;
+}
+
+/* Изображение карточки */
+.service-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Контент карточки */
+.service-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.service-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  text-align: left;
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 1024px) {
+  .design-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+  }
+  
+  .design-service-card.large {
+    grid-column: span 1;
+  }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .design-services-section {
+    padding: 40px 0;
+  }
+  
+  .design-services-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+    gap: 15px;
+  }
+  
+  .design-service-card.large {
+    grid-column: span 1;
+  }
+  
+  .counter-number {
+    font-size: 36px;
+  }
+  
+  .counter-text {
+    font-size: 14px;
+  }
+  
+  .service-title {
+    font-size: 16px;
+  }
+}

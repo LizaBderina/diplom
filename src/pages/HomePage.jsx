@@ -2,8 +2,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Header, Footer } from "../components/layout";
-import { ConsultationForm } from "../components/common";
+import ExperienceSection from "../components/sections/ExperienceSection";
+import SimpleDesignServices from "../components/sections/SimpleDesignServices";
+import ServicesSection from "../components/sections/ServicesSection";
+import CalculatorSection from "../components/sections/CalculatorSection";
+import PortfolioSection from "../components/sections/PortfolioSection";
 import "../styles/pages/homepage.css";
+import PromoBanner from "../components/sections/PromoBanner";
 
 const HomePage = () => {
   return (
@@ -30,179 +35,24 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Опыт */}
-      <section className="experience-section">
-        <div className="container">
-          <h2 className="section-title">
-            ПРОЕКТИРУЕМ ЧАСТНЫЕ И<br />КОММЕРЧЕСКИЕ ИНТЕРЬЕРЫ БОЛЕЕ 25 ЛЕТ
-          </h2>
-          
-          <div className="stats-container">
-            <div className="stats-box years-box">
-              <div className="stats-number">25 лет</div>
-              <div className="stats-description">Опыта в сфере архитектуры и дизайна</div>
-            </div>
-            
-            <div className="stats-row">
-              <div className="stats-box">
-                <div className="stats-number">250+</div>
-                <div className="stats-description">Проектов реализовано под личным контролем</div>
-              </div>
-              
-              <div className="stats-box">
-                <div className="stats-number">1500+</div>
-                <div className="stats-description">Выполненных проектов</div>
-              </div>
-            </div>
-            
-            <div className="designer-container">
-              <div className="designer-photo-wrapper">
-                <img className="designer-photo" alt="Александр Батеньков" src="img/designer.png" />
-              </div>
-              
-              <div className="designer-info">
-                <h3 className="designer-name">Александр Батеньков</h3>
-                <div className="designer-position">Главный дизайнер | Архитектор</div>
-                <p className="designer-description">
-                  Повелитель дизайнерского ремонта "под ключ"
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Секция опыта */}
+      <ExperienceSection />
+      
+      {/* Блок с услугами дизайна */}
+      <SimpleDesignServices />
       
       {/* Кому подходят услуги */}
-      <section className="services-section">
+      <ServicesSection />
+      
+      {/* Калькулятор */}
+      <section className="calculator-container">
         <div className="container">
-          <h2 className="section-title">УЗНАЙТЕ, КОМУ ПОДХОДЯТ НАШИ УСЛУГИ</h2>
-          
-          <div className="services-grid">
-            <div className="service-card">
-              <div className="card-number">01</div>
-              <div className="card-content">
-                <h3 className="card-title">Если вы хотите эстетику</h3>
-                <p className="card-description">
-                  Над вашим проектом трудится целая команда профессионалов. каждый
-                  специалист подбирается с учетом выбранного стиля и ваших
-                  пожеланий!
-                </p>
-              </div>
-            </div>
-            
-            <div className="service-card">
-              <div className="card-number">02</div>
-              <div className="card-title-wrapper">
-                <h3 className="card-title">Вы взыскательны к качеству</h3>
-                <p className="card-description">
-                  Не потерпите работы "тяп-ляп" и слов "и так сойдет" от прораба.
-                </p>
-              </div>
-            </div>
-            
-            <div className="service-card">
-              <div className="card-number">03</div>
-              <div className="card-content">
-                <h3 className="card-title">Вам важна экспертность</h3>
-                <p className="card-description">
-                  Слышали от дизайнеров фразу: "Это не в моей компетенции,
-                  спросите строителя"? Мы предоставляем сервис "одного окна", где
-                  все специалисты работают над одним общим проектом.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          {/* Калькулятор */}
-          <div className="calculator-section">
-            <div className="calculator-header">
-              <h3 className="calculator-title">Ответьте на 7 вопросов, чтобы рассчитать стоимость</h3>
-              <div className="calculator-progress">
-                <span className="current-step">1</span>/<span className="total-steps">7</span>
-              </div>
-            </div>
-            
-            <div className="calculator-body">
-              <h4 className="calculator-question">Дизайн какого объекта вас интересует?</h4>
-              <div className="calculator-options">
-                <div className="calculator-option">
-                  <button className="option-button">
-                    <div className="option-image"></div>
-                    <div className="option-label">Квартира</div>
-                  </button>
-                </div>
-                <div className="calculator-option">
-                  <button className="option-button">
-                    <div className="option-image"></div>
-                    <div className="option-label">Дом</div>
-                  </button>
-                </div>
-                <div className="calculator-option">
-                  <button className="option-button">
-                    <div className="option-image"></div>
-                    <div className="option-label">Коммерческое</div>
-                  </button>
-                </div>
-              </div>
-              <div className="calculator-controls">
-                <button className="control-button prev-button" disabled>Назад</button>
-                <button className="control-button next-button">Далее</button>
-              </div>
-            </div>
-          </div>
+          <CalculatorSection />
         </div>
       </section>
       
       {/* Реализованные проекты */}
-      <section className="portfolio-section">
-        <div className="container">
-          <h2 className="section-title">РЕАЛИЗОВАННЫЕ ПРОЕКТЫ</h2>
-          
-          <div className="portfolio-grid">
-            <div className="portfolio-item">
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Дизайн гостиной</h3>
-                <p className="portfolio-description">Современный минимализм</p>
-              </div>
-            </div>
-            <div className="portfolio-item">
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Дизайн спальни</h3>
-                <p className="portfolio-description">Скандинавский стиль</p>
-              </div>
-            </div>
-            <div className="portfolio-item">
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Дизайн кухни</h3>
-                <p className="portfolio-description">Современная классика</p>
-              </div>
-            </div>
-            <div className="portfolio-item">
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Дизайн ванной комнаты</h3>
-                <p className="portfolio-description">Лофт</p>
-              </div>
-            </div>
-            <div className="portfolio-item">
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Дизайн кабинета</h3>
-                <p className="portfolio-description">Неоклассика</p>
-              </div>
-            </div>
-            <div className="portfolio-item">
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Дизайн детской</h3>
-                <p className="portfolio-description">Современный стиль</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="portfolio-more">
-            <p>Хотите увидеть больше объектов? Перейдите в раздел «Портфолио»</p>
-            <Link to="/портфолио" className="portfolio-button">Портфолио</Link>
-          </div>
-        </div>
-      </section>
+      <PortfolioSection />
       
       {/* Наши преимущества */}
       <section className="advantages-section">
@@ -342,16 +192,7 @@ const HomePage = () => {
       </section>
       
       {/* Баннер с домом */}
-      <section className="promo-banner">
-        <div className="container">
-          <div className="promo-content">
-            <h2 className="promo-title">Создайте своё идеальное пространство с нашими экспертами!</h2>
-            <div className="promo-button-container">
-              <button className="promo-button">Покупай участок в коттеджном поселке бизнес-класса «ПАДОВЫ ОЗЁРА»</button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PromoBanner />
       
       {/* Видеоблог и новости */}
       <section className="video-blog-section">

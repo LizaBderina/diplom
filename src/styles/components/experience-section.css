@@ -1,0 +1,193 @@
+/* src/styles/components/experience-section.css */
+
+/* 1. Секция опыта */
+.experience-section {
+    padding: 60px 0;
+    background-color: #f5f2ed;
+  }
+  
+  .experience-section .section-title {
+    font-size: 28px;
+    font-weight: 400;
+    color: #707070;
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 1.3;
+  }
+  
+  /* 2. Контейнер со всеми статистиками */
+  .stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* 3. Общие стили для всех блоков статистики */
+  .stats-box {
+    display: flex;
+    flex-direction: column;    /* столбиком */
+    justify-content: center;
+    align-items: center;       /* по центру */
+    padding: 30px;
+    border: 1px solid #707070;
+    border-radius: 30px;
+    background-color: #f5f2ed;
+    min-height: 120px;
+  }
+  
+  /* 4. Первый большой блок “25 лет” */
+  .stats-box.years-box {
+    flex-direction: row;       /* строкой */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 30px 40px;
+  }
+  
+  .stats-box.years-box .stats-number {
+    font-size: 42px;
+    font-weight: 600;
+    color: #707070;
+    text-align: left;
+    white-space: nowrap;
+    margin: 0;
+  }
+  
+  .stats-box.years-box .stats-description {
+    font-size: 18px;
+    color: #707070;
+    text-align: right;
+    max-width: 60%;
+    margin: 0;
+  }
+  
+  /* 5. Главный ряд — две колонки */
+  .stats-main-row {
+    display: flex;             /* flex вместо grid */
+    gap: 20px;
+    align-items: stretch;      /* колонки одной высоты */
+  }
+  
+  /* 5.1 Левый столбец — два маленьких блока */
+  .stats-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 0;             /* фикс для flex */
+  }
+  
+  .stats-column .stats-box {
+    flex: 1;
+    min-height: 0;
+  }
+  
+  /* 6. Стили внутри остальных блоков */
+  .stats-number {
+    font-size: 42px;
+    font-weight: 400;
+    color: #707070;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+  
+  .stats-description {
+    font-size: 16px;
+    color: #707070;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  /* 7. Правый столбец — фото + инфо */
+  .stats-right-column {
+    flex: 2;
+    display: flex;
+    gap: 20px;
+    align-items: stretch;      /* растягиваем детей по высоте */
+    min-height: 0;             /* фикс для flex */
+  }
+  
+  /* 7.1 Обёртка картинки */
+  .designer-photo-wrapper {
+    flex: 1;
+    border-radius: 30px;
+    overflow: hidden;
+    min-height: 0;             /* фикс для flex */
+    align-self: stretch;       /* растянем по высоте контейнера */
+  }
+  
+  /* 7.2 Сама картинка */
+  .designer-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 !important;      /* убираем любые отступы */
+  }
+  
+  /* 7.3 Блок с инфой */
+  .designer-info-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    border: 1px solid #707070;
+    border-radius: 30px;
+    background-color: #f5f2ed;
+    min-height: 0;             /* фикс для flex */
+    align-self: stretch;       /* растянем по высоте контейнера */
+  }
+  
+  .designer-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #707070;
+    margin: 0 0 10px;
+  }
+  
+  .designer-position {
+    font-size: 18px;
+    color: #707070;
+    margin-bottom: 15px;
+  }
+  
+  .designer-description {
+    font-size: 16px;
+    color: #707070;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* 8. Адаптивность */
+  @media (max-width: 768px) {
+    .stats-container {
+      gap: 15px;
+    }
+  
+    .stats-main-row {
+      flex-direction: column;   /* одна колонка на мобилке */
+    }
+  
+    .stats-box.years-box {
+      padding: 20px;
+    }
+    .stats-box.years-box .stats-number {
+      font-size: 36px;
+    }
+    .stats-box.years-box .stats-description {
+      font-size: 16px;
+    }
+  
+    .designer-photo-wrapper {
+      height: 250px;            /* фикс для мобилки */
+      flex: none;
+    }
+  
+    .stats-number {
+      font-size: 36px;
+    }
+  }
+  
