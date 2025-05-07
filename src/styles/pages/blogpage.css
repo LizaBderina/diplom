@@ -1,127 +1,68 @@
-/* src/styles/pages/blogpage.css */
-@import '../variables.css';
-
-.blog-page {
-  background-color: var(--color-light);
-}
-
-.blog-intro {
-  margin: 40px 0;
-}
-
-.blog-quote {
-  max-width: 1000px;
+/* -------------------------------------------------
+   ГЛАВНЫЙ КОНТЕЙНЕР
+--------------------------------------------------*/
+.container {
+  max-width: 1040px;          /* ширина страницы как на макете-2 */
   margin: 0 auto;
-  padding: 40px;
-  border-left: 4px solid #ccc;
-  border-right: 4px solid #ccc;
+  padding: 0 16px;
 }
 
-.blog-quote p {
-  margin-bottom: 20px;
-  font-size: var(--font-size-subtitle);
-  line-height: 1.6;
-}
-
-.blog-title {
-  font-size: 48px;
-  color: #b9aa9a;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.blog-subtitle {
-  text-align: center;
-  font-size: var(--font-size-subtitle);
-  margin-bottom: 40px;
-}
-
+/* -------------------------------------------------
+   СЕТКА ВИДЕО
+   8 роликов → 4 ряда по 2 (на десктопе)
+--------------------------------------------------*/
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 32px;             /* вертикаль | горизонталь */
+  justify-content: center;    /* по центру страницы */
+  margin-bottom: 80px;
 }
-
 .video-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 240px;
-  background-color: #f3f3f3;
-  border: 2px solid #e0e0e0;
+  flex: 0 1 320px;            /* 2 карточки в ряд = 640px + gap */
+  aspect-ratio: 16/9;
   border-radius: 20px;
-  color: #fff;
-  font-weight: bold;
-  padding: 20px;
-  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.video-card iframe {
+  position: absolute;
+  inset: 0;                   /* = top:0 right:0 bottom:0 left:0 */
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.social-title {
-  font-size: 36px;
-  color: #b9aa9a;
-  text-align: center;
-  margin-bottom: 20px;
-}
+/* -------------------------------------------------
+   БЛОК СОЦСЕТЕЙ
+--------------------------------------------------*/
+.social-title   { margin: 40px 0 12px; text-align:center; }
+.social-text    { margin-bottom: 32px; }
+.social-icons   { gap: 24px; }
 
-.social-text {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  font-size: var(--font-size-subtitle);
-  line-height: 1.6;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-.social-icon {
-  width: 60px;
-  height: 60px;
+.social-icon {             /* базовый круг */
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: #333;
-  transition: transform 0.3s;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60% 60%;
+  transition: transform .25s;
 }
+.social-icon:hover { transform: scale(1.1); }
 
-.social-icon:hover {
-  transform: scale(1.1);
-}
+.social-icon.instagram { background:#E1306C url('../../assets/icons/instagram-icon.svg') center/60% no-repeat; }
+.social-icon.telegram  { background:#2CA5E0 url('../../assets/icons/telegram-icon.svg')  center/60% no-repeat; }
+.social-icon.whatsapp  { background:#25D366 url('../../assets/icons/whatsapp-icon.svg')  center/60% no-repeat; }
+.social-icon.youtube   { background:#FF0000 url('../../assets/icons/youtube-icon.svg')   center/60% no-repeat; }
+.social-icon.rutube    { background:#000 url('../../assets/icons/rutube-icon.svg')       center/60% no-repeat; }
+.social-icon.pinterest { background:#E60023 url('../../assets/icons/pinterest-icon.svg') center/60% no-repeat; }
 
-.exhibitions-title {
-  font-size: 36px;
-  color: #b9aa9a;
-  margin-bottom: 10px;
-}
-
-.exhibitions-text {
-  margin-bottom: 40px;
-  font-size: var(--font-size-subtitle);
-}
-
-@media (max-width: 992px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .blog-title, .social-title, .exhibitions-title {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 576px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .blog-title, .social-title, .exhibitions-title {
-    font-size: 28px;
-  }
-  
-  .social-icons {
-    flex-wrap: wrap;
-  }
+/* -------------------------------------------------
+   АДАПТИВ
+--------------------------------------------------*/
+@media (max-width: 768px) {
+  .video-card { flex: 0 1 100%; }   /* одна карточка в строке */
+  .video-grid { gap: 32px; }
 }

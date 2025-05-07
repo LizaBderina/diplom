@@ -1,113 +1,69 @@
 /* src/styles/pages/equipmentpage.css */
 @import '../variables.css';
 
-.equipment-page {
-  background-color: var(--color-light);
+/* ────────── базовый фон ────────── */
+.equipment-page           { background: var(--color-light); }
+.container                { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ────────── типовые секции ───────── */
+.section                  { margin-top: 80px; text-align: center; }
+.section:first-of-type    { margin-top: 40px; }
+
+/* ────────── заголовки ───────────────*/
+.equipment-title          { font-size: 42px; line-height: 1.25; color:#7d8e99; font-weight:700; text-transform:uppercase; margin-bottom:40px; }
+.examples-title,
+.directions-title         { font-size:28px; font-weight:700; margin-bottom:40px; color:#3b3b3b; }
+
+/* ────────── hero-картинка ───────────*/
+.main-image img           { width:100%; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.08); }
+
+/* ────────── grid примеров ───────────*/
+.examples-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  justify-items:center;
+  margin-bottom:48px;
+}
+.example-card{
+  width:100%; aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:12px;
 }
 
-.equipment-title {
-  text-align: center;
-  font-size: 48px;
-  color: var(--color-primary);
-  margin: 80px 0 40px;
-  line-height: 1.3;
+/* ────────── кнопка «показать ещё» ───*/
+.show-more-button{
+  display:inline-block;
+  padding:14px 32px;
+  font:600 16px/1 var(--font-family-main);
+  color:#fff; background:#7d8e99;
+  border-radius:24px;
+  transition:background .25s, transform .15s;
 }
+.show-more-button:hover   { background:#61737e; }
+.show-more-button:active  { transform:translateY(1px); }
 
-.main-image {
-  max-width: 1100px;
-  margin: 0 auto 60px;
+/* ────────── grid направлений ────────*/
+.directions-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:40px 32px;
+  justify-items:center;
+  margin-top:48px;
+  margin-bottom:80px;
 }
-
-.main-image img {
-  width: 100%;
-  border-radius: 8px;
+.direction-card           { display:flex; flex-direction:column; align-items:center; gap:14px; max-width:230px; }
+.direction-icon{
+  width:230px; height:140px; object-fit:cover;
+  border-radius:14px; box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
+.direction-name           { font-size:15px; line-height:1.35; }
 
-.examples-title, .directions-title {
-  text-align: center;
-  font-size: 28px;
-  color: #b9aa9a;
-  margin-bottom: 30px;
+/* ────────── адаптив ─────────────────*/
+@media(max-width:768px){
+  .equipment-title        { font-size:34px; }
 }
-
-.examples-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.example-card {
-  background-color: #f3f3f3;
-  border-radius: 20px;
-  height: 300px;
-}
-
-.show-more-button {
-  display: block;
-  width: 300px;
-  height: 50px;
-  margin: 0 auto 60px;
-  background-color: #8c9da5;
-  color: white;
-  border-radius: 20px;
-  font-size: 18px;
-  font-weight: 500;
-  transition: background-color 0.3s;
-}
-
-.show-more-button:hover {
-  background-color: #768c97;
-}
-
-.directions-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 60px;
-}
-
-.direction-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.direction-icon {
-  width: 100%;
-  height: 225px;
-  background-color: #f3f3f3;
-  border-radius: 20px;
-}
-
-.direction-name {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-@media (max-width: 992px) {
-  .equipment-title {
-    font-size: 36px;
-  }
-  
-  .examples-grid, .directions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .equipment-title {
-    font-size: 28px;
-    margin: 40px 0 30px;
-  }
-  
-  .examples-grid, .directions-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .example-card {
-    height: 200px;
-  }
+@media(max-width:480px){
+  .equipment-title        { font-size:28px; }
+  .section                { margin-top:60px; }
 }

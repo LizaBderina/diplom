@@ -24,7 +24,7 @@ const routes = [
     element: <PortfolioPage />,
   },
   {
-    path: "/видео-блог",
+    path: "/video-blog",
     element: <BlogPage />,
   },
   {

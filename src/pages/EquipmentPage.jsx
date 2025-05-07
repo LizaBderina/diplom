@@ -1,99 +1,84 @@
 // src/pages/EquipmentPage.jsx
 import React from "react";
+import { Link }          from "react-router-dom";
 import { Header, Footer } from "../components/layout";
 import "../styles/pages/equipmentpage.css";
 
-const EquipmentPage = () => {
-  return (
-    <div className="equipment-page">
-      <Header />
-      
-      <div className="container">
-        <h1 className="equipment-title">СЕРВИС КОМПЛЕКТАЦИИ<br />ЧИСТОВЫМИ МАТЕРИАЛАМИ</h1>
-        
+const hero = "img/image_45.png";
+
+/* примеры готовых работ (4 шт) */
+const examples = [       
+  "/img/balda1.jpg",
+  "/img/balaba2.jpg",
+  "/img/baldada3.jpg",
+  "/img/balana4.jpg",
+];
+
+/* направления иконка+подпись (12 шт)  */
+const directions = [
+  { src: "/img/san.jpg",          label: "Сантехника" },
+  { src: "/img/col.webp",            label: "Керамогранит и плитка" },
+  { src: "/img/par.jpeg",           label: "Напольные покрытия" },
+  { src: "/img/div.jpeg",             label: "Мягкая мебель" },
+  { src: "/img/sis.jpeg",             label: "Системы вентиляции и кондиционирования" },
+  { src: "/img/sve.webp",            label: "Технический и декоративный свет" },
+  { src: "/img/kyx.jpeg",          label: "Текстильное оформление, декор" },
+  { src: "/img/ess.jpeg",            label: "Обои, краска, лепнина…" },
+  { src: "/img/bit.jpg",       label: "Бытовая техника" },
+  { src: "/img/kyx.jpeg",          label: "Кухни, шкафы, гардеробные" },
+  { src: "/img/cole.webp",            label: "Двери и перегородки" },
+  { src: "/img/dik.jpeg",          label: "Розетки и выключатели" },
+];
+
+const EquipmentPage = () => (
+  <div className="equipment-page">
+    <Header />
+
+    <main className="container">
+
+      {/* ── Заголовок + hero ───────────────────────── */}
+      <section className="section">
+        <h1 className="equipment-title">
+          Сервис комплектации<br />чистовыми материалами
+        </h1>
+
         <div className="main-image">
-          <img src="/img/kitchen-interior.jpg" alt="Интерьер кухни" />
+          <img src={hero} alt="Интерьер кухни" />
         </div>
-        
-        <h2 className="examples-title">ПОСМОТРИТЕ ПРИМЕРЫ НАШИХ РАБОТ</h2>
-        
+      </section>
+
+      {/* ── Примеры работ ─────────────────────────── */}
+      <section className="section">
+        <h2 className="examples-title">Посмотрите примеры наших работ</h2>
+
         <div className="examples-grid">
-          <div className="example-card"></div>
-          <div className="example-card"></div>
-          <div className="example-card"></div>
-          <div className="example-card"></div>
+          {examples.map((src, i) => (
+            <img className="example-card" src={src} alt={`Пример ${i+1}`} key={src} />
+          ))}
         </div>
-        
-        <button className="show-more-button">Показать ещё</button>
-        
-        <h2 className="directions-title">РАБОТАЕМ С НАПРАВЛЕНИЯМИ:</h2>
-        
+
+        <Link to="/портфолио" className="show-more-button">
+          Показать ещё
+        </Link>
+      </section>
+
+      {/* ── Направления ───────────────────────────── */}
+      <section className="section">
+        <h2 className="directions-title">Работаем с направлениями:</h2>
+
         <div className="directions-grid">
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Сантехника</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Керамогранит и плитка</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Напольные покрытия</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Мягкая мебель</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Системы вентиляции и кондиционирования</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Технический и декоративный свет</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Текстильное оформление, декор</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Обои, краска, лепнина, декоративная штукатурка</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Бытовая техника</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Кухни, шкафы, гардеробные</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Двери и перегородки</div>
-          </div>
-          
-          <div className="direction-card">
-            <div className="direction-icon"></div>
-            <div className="direction-name">Розетки и выключатели</div>
-          </div>
+          {directions.map(({ src, label }) => (
+            <figure className="direction-card" key={label}>
+              <img className="direction-icon" src={src} alt={label} />
+              <figcaption className="direction-name">{label}</figcaption>
+            </figure>
+          ))}
         </div>
-      </div>
-      
-      <Footer />
-    </div>
-  );
-};
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+);
 
 export default EquipmentPage;

@@ -16,6 +16,7 @@
 
 /* Главный баннер */
 .main-banner {
+  align-items: center;
   padding: 60px 0;
   position: relative;
   overflow: hidden;
@@ -409,6 +410,7 @@
   border-radius: 15px;
   padding: 30px;
   margin-top: 40px;
+  align-items: center;
 }
 
 .form-title {

@@ -1,69 +1,108 @@
-/* src/styles/pages/portfoliopage.css */
-@import '../variables.css';
-
-.portfolio-page {
-  background-color: var(--color-light);
+/* ===== общие ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.portfolio-header {
+:root {
+  --bg-page: #f4f3ef;
+  --bg-card: #3f3b3b;
+  --gap: 20px;
+  --container: 1560px;      /* 2 × 768 + 20 gap + 15-15 padding */
+}
+
+/* ===== каркас страницы ===== */
+body { background: var(--bg-page); }
+
+.portfolio-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 15px 240px;   /* ↙︎ большой нижний отступ, чтобы футер не наезжал */
+}
+
+/* ===== hero ===== */
+.portfolio-hero {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 80px 0 40px;
+  align-items: flex-start;
+  margin-top: 60px;
 }
 
 .portfolio-intro {
+  max-width: 360px;
   font-size: 18px;
-  line-height: 1.6;
-  max-width: 500px;
+  line-height: 1.55;
 }
 
 .portfolio-title {
-  font-size: 68px;
-  color: var(--color-primary);
+  margin: 0;
+  font-size: 72px;
+  font-weight: 700;
+  color: #7e8d96;
+  line-height: 1;
 }
 
+/* ===== grid 2 × N ===== */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-bottom: 60px;
+  gap: var(--gap);          /* и горизонтально, и вертикально */
+  margin-top: 60px;         /* отступ от текста до карточек */
 }
 
+/* ===== карточка ===== */
 .portfolio-item {
-  height: 380px;
-  background-color: #4c4c4c;
-  border-radius: 20px;
-  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
+
+  background: var(--bg-card);
+  color: #fff;
+  border-radius: 20px;
+
+  text-decoration: none;
+  padding: 20px;
+  min-height: 380px;
+
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+.portfolio-item h3 {
+  margin: 0 0 14px;
+  font-size: 24px;
+}
+
+.portfolio-item p {
+  margin: 0;
+  font-size: 16px;
+  opacity: .85;
+}
+
+/* ===== адаптив ===== */
+@media (max-width: 1700px) {
+  :root { --container: calc(100% - 360px); } /* те же 180 px слева/справа */
 }
 
 @media (max-width: 992px) {
-  .portfolio-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  
-  .portfolio-title {
-    font-size: 48px;
-  }
+  .portfolio-hero { flex-direction: column; gap: 32px; }
+  .portfolio-title { font-size: 56px; }
 }
 
 @media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .portfolio-title {
-    font-size: 36px;
-  }
-  
-  .portfolio-item {
-    height: 300px;
-  }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-title { font-size: 42px; }
+  .portfolio-item { min-height: 320px; }
 }

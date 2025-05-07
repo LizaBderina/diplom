@@ -1,51 +1,50 @@
-// src/components/layout/Header.jsx
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-// import { Logo } from "../common/Logo";
+import React      from "react";
+import PropTypes  from "prop-types";
+import { NavLink } from "react-router-dom";   // ← заменили Link на NavLink
 import "./styles.css";
-
 
 export const Header = ({ className }) => {
   return (
     <div className={`header ${className || ""}`}>
-      <Link to="/full-hd-liza" className="logo-link">
-        <img 
-          src="/icons/logo.svg" 
-          alt="Александра Батенькова" 
-          className="header-logo" 
+      {/* логотип */}
+      <NavLink to="/full-hd-liza" className="logo-link">
+        <img
+          src="/icons/logo.svg"
+          alt="Александра Батенькова"
+          className="header-logo"
         />
-      </Link>
-      
+      </NavLink>
+
+      {/* контакты */}
       <div className="header-contacts">
-        <a href="tel:+74996539305" rel="noopener noreferrer" target="_blank">
+        <a href="tel:+74996539305"  target="_blank" rel="noopener noreferrer">
           <span className="contact-link">+7 (499) 653-93-05</span>
         </a>
         <br />
-        <a
-          href="mailto:abatenkoff@mail.ru"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
+        <a href="mailto:abatenkoff@mail.ru" target="_blank" rel="noopener noreferrer">
           <span className="contact-link">abatenkoff@mail.ru</span>
         </a>
       </div>
-      
+
+      {/* навигация */}
       <nav className="header-nav">
-        <Link to="/full-hd-liza" className="nav-link">Дизайн</Link>
-        <Link to="/ремонт" className="nav-link">Ремонт</Link>
-        <Link to="/комплектация" className="nav-link">Комплектация</Link>
-        <Link to="/портфолио" className="nav-link">Портфолио</Link>
-        <Link to="/сотрудничество" className="nav-link">Сотрудничество</Link>
+        <NavLink to="/full-hd-liza"  className="nav-link">Дизайн</NavLink>
+        <NavLink to="/ремонт"        className="nav-link">Ремонт</NavLink>
+        <NavLink to="/комплектация"  className="nav-link">Комплектация</NavLink>
+        <NavLink to="/портфолио"     className="nav-link">Портфолио</NavLink>
+        <NavLink to="/сотрудничество" className="nav-link">Сотрудничество</NavLink>
+        {/* ↓ новый пункт меню */}
+        <NavLink to="/video-blog"    className="nav-link">Видеоблог</NavLink>
       </nav>
-      
+
+      {/* соц-сети */}
       <div className="social-button">
-        <Link to="/соц-сети" className="social-button-link">Соц-сети</Link>
+        <NavLink to="/соц-сети" className="social-button-link">Соц-сети</NavLink>
       </div>
     </div>
   );
 };
 
 Header.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
