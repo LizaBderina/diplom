@@ -1,7 +1,7 @@
 // src/pages/BlogPage.jsx
-import React           from "react";
-import { Header, Footer }      from "../components/layout";
-import { ConsultationForm }    from "../components/common";
+import React from "react";
+import { Header, Footer } from "../components/layout";
+import { ConsultationForm } from "../components/common/ConsultationForm"; // Корректный импорт
 import "../styles/pages/blogpage.css";
 
 const BlogPage = () => (
@@ -26,7 +26,7 @@ const BlogPage = () => (
       {/* ─── СЕКЦИЯ 1 ― ВИДЕОБЛОГ ───────────────────── */}
       <section className="section">
         <h2 className="section-title">Видеоблог.</h2>
-        <p  className="section-subtitle">
+        <p className="section-subtitle">
           Обзоры интерьеров. Интервью с заказчиками. Обзоры Европейских выставок.
         </p>
 
@@ -56,25 +56,25 @@ const BlogPage = () => (
       {/* ─── БЛОК СОЦСЕТЕЙ ──────────────────────────── */}
       <section className="section">
         <h3 className="social-title">Подпишитесь на наши социальные сети</h3>
-        <p  className="section-subtitle">
+        <p className="section-subtitle">
           Следите за нашими проектами в онлайн-режиме: истории с клиентами, готовые
           дизайн-проекты и объекты «под ключ», советы и разборы ошибок!
         </p>
 
         <div className="social-icons">
-          <a href="#" className="social-icon instagram"  title="Instagram" />
-          <a href="#" className="social-icon telegram"   title="Telegram"  />
-          <a href="#" className="social-icon whatsapp"   title="WhatsApp"  />
-          <a href="#" className="social-icon youtube"    title="YouTube"   />
-          <a href="#" className="social-icon rutube"     title="RuTube"    />
-          <a href="#" className="social-icon pinterest"  title="Pinterest" />
+          <a href="#" className="social-icon instagram" title="Instagram" />
+          <a href="#" className="social-icon telegram" title="Telegram" />
+          <a href="#" className="social-icon whatsapp" title="WhatsApp" />
+          <a href="#" className="social-icon youtube" title="YouTube" />
+          <a href="#" className="social-icon rutube" title="RuTube" />
+          <a href="#" className="social-icon pinterest" title="Pinterest" />
         </div>
       </section>
 
       {/* ─── СЕКЦИЯ 2 ― ОБЗОРЫ ВЫСТАВОК ─────────────── */}
       <section className="section">
         <h2 className="section-title">Мои обзоры европейских выставок.</h2>
-        <p  className="section-subtitle">
+        <p className="section-subtitle">
           Как я ездил на iSaloni, и другие известные интерьерные выставки.
         </p>
 
@@ -99,7 +99,12 @@ const BlogPage = () => (
         </div>
       </section>
 
-      <ConsultationForm />
+      {/* Консультационная форма с заданными параметрами для страницы блога */}
+      <ConsultationForm 
+        title="Запись на консультацию" 
+        subtitle="Заполните форму и получите детальную консультацию от эксперта по дизайну интерьера"
+        buttonText="Записаться на консультацию"
+      />
     </div>
 
     <Footer />

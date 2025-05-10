@@ -21,7 +21,7 @@ const CollaborationPage = () => {
         
         <div className="tools-grid">
           <div className="tool-card">
-            <img src="/img/instagram-preview.jpg" alt="Instagram" className="tool-image" />
+            <img src="/img/image51.png" alt="Instagram" className="tool-image" />
             <div className="tool-info">
               <h3 className="tool-name">Инстаграм</h3>
               <p className="tool-stats">— 215 тыс. подписчиков<br />охваты видео от 300−500 тыс. человек</p>
@@ -29,7 +29,7 @@ const CollaborationPage = () => {
           </div>
           
           <div className="tool-card">
-            <img src="/img/youtube-preview.jpg" alt="YouTube" className="tool-image" />
+            <img src="/img/image52.png" alt="YouTube" className="tool-image" />
             <div className="tool-info">
               <h3 className="tool-name">Youtube</h3>
               <p className="tool-stats">— 110 тыс. подписчиков<br />охваты 300+ тыс. человек</p>
@@ -78,12 +78,15 @@ const CollaborationPage = () => {
           </div>
         </div>
         
+        {/* Updated CTA section to match Image 2 with fixed text overflow */}
         <div className="collab-cta">
-          <h2 className="cta-title">Приглашаем к сотрудничеству!</h2>
+          <div className="cta-content">
+            <h2 className="cta-title">Приглашаем к сотрудничеству!</h2>
+            <a href="https://api.whatsapp.com/send/?phone=79120456898" className="whatsapp-button">
+              Напишите нам в Ватсап
+            </a>
+          </div>
           <img src="img/batenkov_heart.png" alt="Дизайнер" className="designer-photo" />
-          <a href="https://api.whatsapp.com/send/?phone=79120456898" className="whatsapp-button">
-            Напишите нам в Ватсап
-          </a>
         </div>
         
         <h3 className="social-title">Подпишитесь на наши социальные сети</h3>

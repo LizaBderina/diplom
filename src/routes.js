@@ -8,6 +8,8 @@ import ArticlePage from "./pages/ArticlePage";
 import RenovationPage from "./pages/RenovationPage";
 import EquipmentPage from "./pages/EquipmentPage";
 import CollaborationPage from "./pages/CollaborationPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import RenovationApartmentPage from "./pages/RenovationApartmentPage";
 
 
 const routes = [
@@ -46,7 +48,16 @@ const routes = [
   {
     path: "/сотрудничество",
     element: <CollaborationPage />,
-  }
+  },
+  // Добавляем новый маршрут для политики конфиденциальности
+  {
+    path: "/политика-конфиденциальности",
+    element: <PrivacyPolicyPage />,
+  },
+  {
+    path: "/ремонт-квартиры-под-ключ",
+    element: <RenovationApartmentPage />,
+  },
 ];
 
 export default routes;

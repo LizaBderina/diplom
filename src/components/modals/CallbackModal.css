@@ -1,0 +1,188 @@
+/* Стили для компонента CallbackModal */
+@import '../../styles/variables.css';
+
+/* Стили для модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 15px;
+  color: #000;
+}
+
+.modal-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin: 0 0 30px;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* Стиль для контейнера ввода телефона */
+.phone-input-container {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.country-code {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.phone-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.phone-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+/* Стили для чекбоксов */
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-top: 3px;
+  margin-right: 10px;
+}
+
+.checkbox-text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.privacy-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Кнопка отправки формы */
+.submit-button {
+  display: block;
+  width: 100%;
+  background-color: #776556; /* Цвет кнопки */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #665548; /* Чуть темнее при наведении */
+}
+
+/* Стили для отключенной кнопки при отправке */
+.submit-button:disabled {
+  background-color: #776556;
+  opacity: 0.7;
+  cursor: not-allowed;
+  animation: pulse 1.5s infinite;
+}
+
+/* Состояние загрузки для полей формы */
+.phone-input:disabled,
+.checkbox-container input:disabled + .checkbox-text {
+  opacity: 0.7;
+}
+
+/* Стили для сообщения об ошибке */
+.form-error {
+  color: #e53935;
+  font-size: 14px;
+  margin: -10px 0 15px;
+  padding: 5px 0;
+  text-align: center;
+  background-color: rgba(229, 57, 53, 0.05);
+  border-radius: 4px;
+  animation: shake 0.6s ease-in-out;
+}
+
+/* Анимация для привлечения внимания к ошибке */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Индикатор загрузки */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Адаптивность */
+@media (max-width: 767px) {
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .modal-title {
+    font-size: 24px;
+  }
+  
+  .modal-subtitle {
+    font-size: 14px;
+  }
+}

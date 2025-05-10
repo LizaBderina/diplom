@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Header, Footer } from "../components/layout";
+import { ConsultationForm } from "../components/common/ConsultationForm"; // Импортируем компонент
 import ExperienceSection from "../components/sections/ExperienceSection";
 import SimpleDesignServices from "../components/sections/SimpleDesignServices";
 import ServicesSection from "../components/sections/ServicesSection";
@@ -117,77 +118,17 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Консультация */}
-      <section className="consultation-section">
+      {/* Секция заказа дизайн-проекта - используем консультационную форму */}
+      <section className="design-order-section">
         <div className="container">
-          <h2 className="section-title">КОНСУЛЬТАЦИЯ</h2>
-          
-          <div className="consultation-grid">
-            <div className="consultation-item">
-              <div className="consultation-number">1</div>
-              <p className="consultation-text">
-                Если квартира или дом еще не выбраны
-              </p>
-            </div>
-            <div className="consultation-item">
-              <div className="consultation-number">2</div>
-              <p className="consultation-text">
-                Сметистика
-              </p>
-            </div>
-            <div className="consultation-item">
-              <div className="consultation-number">3</div>
-              <p className="consultation-text">
-                Рекомендации по планировочному решению
-              </p>
-            </div>
-            <div className="consultation-item">
-              <div className="consultation-number">4</div>
-              <p className="consultation-text">
-                Бюджетирование
-              </p>
-            </div>
-            <div className="consultation-item">
-              <div className="consultation-number">5</div>
-              <p className="consultation-text">
-                Какие строители вам подойдут?
-              </p>
-            </div>
-            <div className="consultation-item">
-              <div className="consultation-number">6</div>
-              <p className="consultation-text">
-                Продолжительность консультации 1 час
-              </p>
-            </div>
-          </div>
-          
-          <div className="consultation-form-container">
-            <h3 className="form-title">КОНСУЛЬТАЦИЯ С ДИЗАЙНЕРОМ</h3>
-            <p className="form-subtitle">Заполните форму и мы свяжемся с вами в ближайшее время!</p>
-            
-            <form className="consultation-form">
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Ваше Имя" />
-              </div>
-              <div className="form-group">
-                <input type="tel" className="form-control" placeholder="Телефон" />
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Площадь вашего объекта" />
-              </div>
-              <div className="form-group checkbox-group">
-                <label className="checkbox-label">
-                  <input type="checkbox" /> Согласен с условиями политики конфиденциальности данных
-                </label>
-              </div>
-              <div className="form-group checkbox-group">
-                <label className="checkbox-label">
-                  <input type="checkbox" /> Даю согласие на обработку персональных данных
-                </label>
-              </div>
-              <button type="submit" className="submit-button">Записаться на консультацию</button>
-            </form>
-          </div>
+          <ConsultationForm 
+            title="Заказать дизайн проект"
+            subtitle="При заказе ремонта «под ключ», вы получаете дизайн-проект в подарок*"
+            buttonText="Получить смету"
+            withNote={true}
+            noteText="* для помещений более 200 кв. м."
+            className="design-order-form"
+          />
         </div>
       </section>
       

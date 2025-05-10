@@ -3,23 +3,26 @@
 @import '../components/experience-section.css';
 
 .homepage {
-  background-color: #f5f2ed;
   font-family: var(--font-family-main);
   color: #707070;
 }
 
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 /* Главный баннер */
 .main-banner {
-  align-items: center;
-  padding: 60px 0;
   position: relative;
-  overflow: hidden;
+  /* только верхний отступ 60px, низа нет */
+  padding: 60px 0 0;
+  /* гарантируем нужную высоту для картинок */
+  min-height: 543px;
+  /* абсолютные картинки не обрезаются */
+  overflow: visible;
+}
+
+.page-wrapper {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  /* боковые паддинги — берутся из global.css (180/120/80/40/20px) */
 }
 
 .banner-content {
@@ -28,7 +31,7 @@
   z-index: 2;
 }
 
-.main-subtitle, 
+.main-subtitle,
 .main-title {
   font-size: 48px;
   color: #707070;
@@ -53,34 +56,38 @@
   background-color: #5a6a73;
 }
 
+/* Абсолютно позиционированные картинки */
 .banner-images {
   position: absolute;
   right: 0;
-  top: 0;
-  width: 45%;
-  height: 100%;
+  top: -30px;    /* на 30px выше page-wrapper = ровно 30px под хедером */
   z-index: 1;
 }
 
 .image-container {
   display: flex;
-  height: 100%;
   gap: 10px;
+  justify-content: flex-end;  /* сдвигаем к правому краю обёртки */
+  align-items: flex-start;    /* базируем по верхнему краю */
 }
 
 .banner-image {
-  width: 48%;
-  height: 90%;
   object-fit: cover;
   border-radius: 20px;
 }
 
+/* левая (спальня) — 336×318, смещена вниз, чтобы совпали нижние края */
 .banner-image.bedroom {
-  margin-top: 40px;
+  width: 336px;
+  height: 318px;
+  margin-top: 195px;  /* 513 − 318 = 195px */
 }
 
+/* правая (кухня) — 358×513 */
 .banner-image.kitchen {
-  margin-top: 20px;
+  width: 358px;
+  height: 513px;
+  margin-top: 0;
 }
 
 /* Общие стили для секций */
@@ -95,7 +102,6 @@
 /* Кому подходят услуги */
 .services-section {
   padding: 60px 0;
-  background-color: #f5f2ed;
 }
 
 .services-grid {
@@ -320,7 +326,7 @@
 /* Преимущества */
 .advantages-section {
   padding: 60px 0;
-  background-color: #f5f2ed;
+
 }
 
 .advantages-list {
@@ -369,7 +375,6 @@
 /* Консультация */
 .consultation-section {
   padding: 60px 0;
-  background-color: #f5f2ed;
 }
 
 .consultation-grid {
@@ -442,7 +447,6 @@
   padding: 12px 15px;
   border: none;
   border-radius: 5px;
-  background-color: white;
   font-size: 15px;
   color: #707070;
 }
@@ -516,8 +520,7 @@
 
 /* Видеоблог и новости */
 .video-blog-section {
-  padding: 60px 0;
-  background-color: #f5f2ed;
+  padding: 60px 0;  
 }
 
 .video-grid {
@@ -587,70 +590,69 @@
 
 /* Адаптивность */
 @media (max-width: 1200px) {
-  .banner-images {
-    width: 40%;
-  }
-  
+  /* при необходимости можно убрать/подправить width у баннерных изображений */
   .services-grid,
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .main-subtitle, 
+  .main-subtitle,
   .main-title {
     font-size: 36px;
   }
-  
+
   .banner-content {
     max-width: 100%;
     text-align: center;
     margin-bottom: 300px;
   }
-  
+
   .banner-images {
-    width: 100%;
     position: relative;
+    top: 0;
+    right: 0;
     height: 250px;
     margin-top: 30px;
   }
-  
+
   .image-container {
     justify-content: center;
   }
-  
+
   .banner-image {
     width: 45%;
     height: 250px;
+    margin-top: 0 !important;
   }
-  
+
   .services-grid,
   .portfolio-grid,
   .consultation-grid,
   .video-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .portfolio-item-large,
   .portfolio-item-wide,
   .video-item-large,
   .video-item-wide {
     grid-column: span 1;
   }
-  
+
   .advantage-item {
     flex-direction: column;
   }
-  
+
   .promo-title {
     font-size: 24px;
   }
-  
+
   .promo-button {
     padding: 10px 20px;
     font-size: 14px;
@@ -658,31 +660,31 @@
 }
 
 @media (max-width: 480px) {
-  .main-subtitle, 
+  .main-subtitle,
   .main-title {
     font-size: 28px;
   }
-  
+
   .banner-content {
     margin-bottom: 200px;
   }
-  
+
   .banner-images {
     height: 180px;
   }
-  
+
   .banner-image {
     height: 180px;
   }
-  
+
   .section-title {
     font-size: 22px;
   }
-  
+
   .consultation-item {
     flex-direction: column;
   }
-  
+
   .video-controls {
     flex-direction: column;
     align-items: center;

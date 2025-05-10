@@ -1,0 +1,62 @@
+/* Стили для компонента CallbackButton */
+@import '../../styles/variables.css';
+
+.callback-btn {
+  background-color: #333;
+  color: #fff;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-content);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.callback-btn:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+.callback-btn:active {
+  transform: translateY(0);
+}
+
+/* Варианты кнопок */
+.callback-btn-primary {
+  background-color: var(--color-primary);
+}
+
+.callback-btn-primary:hover {
+  background-color: #665548;
+}
+
+.callback-btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.callback-btn-outline:hover {
+  background-color: rgba(119, 101, 86, 0.1);
+}
+
+.callback-btn-large {
+  font-size: 18px;
+  padding: 18px 30px;
+}
+
+.callback-btn-small {
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+/* Адаптивность */
+@media (max-width: 767px) {
+  .callback-btn {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+}

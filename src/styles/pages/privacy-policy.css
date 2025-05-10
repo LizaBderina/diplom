@@ -1,0 +1,70 @@
+/* src/styles/pages/privacy-policy.css */
+@import '../variables.css';
+
+.privacy-policy-page {
+  background-color: var(--color-light);
+  padding-bottom: 60px;
+}
+
+.privacy-policy-page .container {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.policy-title {
+  font-size: 36px;
+  line-height: 1.2;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 30px 0 40px;
+}
+
+.policy-subtitle {
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--color-primary);
+  margin: 30px 0 15px;
+}
+
+.policy-content {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.policy-content p {
+  margin-bottom: 20px;
+}
+
+.policy-content ul {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.policy-content ul li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.policy-content ul li::before {
+  content: "—";
+  position: absolute;
+  left: -18px;
+}
+
+@media (max-width: 768px) {
+  .policy-title {
+    font-size: 28px;
+    margin: 20px 0 30px;
+  }
+  
+  .policy-subtitle {
+    font-size: 20px;
+  }
+  
+  .policy-content {
+    font-size: 15px;
+  }
+}
