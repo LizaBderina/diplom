@@ -10,12 +10,15 @@
 /* Главный баннер */
 .main-banner {
   position: relative;
-  /* только верхний отступ 60px, низа нет */
-  padding: 60px 0 0;
-  /* гарантируем нужную высоту для картинок */
-  min-height: 543px;
-  /* абсолютные картинки не обрезаются */
+  padding: 80px 0 0;
   overflow: visible;
+}
+
+.main-banner .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .page-wrapper {
@@ -25,12 +28,23 @@
   /* боковые паддинги — берутся из global.css (180/120/80/40/20px) */
 }
 
+/* Текстовый блок в баннере */
 .banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
   max-width: 600px;
   position: relative;
   z-index: 2;
+  padding: 0;
 }
 
+.banner-content h1,
+.banner-content p {
+  margin: 0 0 16px;
+}
+
+/* Стили заголовков */
 .main-subtitle,
 .main-title {
   font-size: 48px;
@@ -38,37 +52,46 @@
   font-weight: 400;
   margin: 0;
   line-height: 1.2;
+  text-align: left;
 }
 
+/* Кнопка «Заказать» — всегда залита и прижата к левому краю */
 .order-button {
-  margin-top: 40px;
-  background-color: #7D8E98;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 10px 36px;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--color-primary) !important;
+  color: #ffffff                !important;
+  border: none                  !important;
+  border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  align-self: flex-start;
+  transition: opacity .2s;
+  opacity: 1;
+}
+
+.banner-content .order-button {
+  background-color: var(--color-accent) !important;
 }
 
 .order-button:hover {
-  background-color: #5a6a73;
+  opacity: 0.9;
 }
 
-/* Абсолютно позиционированные картинки */
+/* Изображения в баннере */
 .banner-images {
-  position: absolute;
-  right: 0;
-  top: -30px;    /* на 30px выше page-wrapper = ровно 30px под хедером */
+  position: relative;
+  margin: 0;
   z-index: 1;
 }
 
 .image-container {
   display: flex;
   gap: 10px;
-  justify-content: flex-end;  /* сдвигаем к правому краю обёртки */
-  align-items: flex-start;    /* базируем по верхнему краю */
+  justify-content: flex-end;
+  /* сдвигаем к правому краю обёртки */
+  align-items: flex-start;
+  /* базируем по верхнему краю */
 }
 
 .banner-image {
@@ -80,7 +103,8 @@
 .banner-image.bedroom {
   width: 336px;
   height: 318px;
-  margin-top: 195px;  /* 513 − 318 = 195px */
+  margin-top: 195px;
+  /* 513 − 318 = 195px */
 }
 
 /* правая (кухня) — 358×513 */
@@ -520,7 +544,7 @@
 
 /* Видеоблог и новости */
 .video-blog-section {
-  padding: 60px 0;  
+  padding: 60px 0;
 }
 
 .video-grid {
@@ -590,6 +614,7 @@
 
 /* Адаптивность */
 @media (max-width: 1200px) {
+
   /* при необходимости можно убрать/подправить width у баннерных изображений */
   .services-grid,
   .portfolio-grid {
@@ -602,15 +627,20 @@
 }
 
 @media (max-width: 768px) {
+
   .main-subtitle,
   .main-title {
     font-size: 36px;
   }
 
   .banner-content {
-    max-width: 100%;
-    text-align: center;
-    margin-bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* текст слева */
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
   }
 
   .banner-images {
@@ -660,6 +690,7 @@
 }
 
 @media (max-width: 480px) {
+
   .main-subtitle,
   .main-title {
     font-size: 28px;
@@ -689,4 +720,20 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+/* Центрируем форму заказа дизайна */
+.design-order-section .container {
+  display: flex;
+  justify-content: center; /* по горизонтали */
+  /* если нужно и по вертикали, раскомментируйте: */
+  /* align-items: center; */
+  /* min-height: calc(100vh - 80px);  учет шапки ≈80px */
+}
+
+/* Ограничиваем ширину самой формы и центрируем её внутри flex-контейнера */
+.design-order-section .design-order-form {
+  width: 100%;
+  max-width: 480px; /* подберите под свою форму */
+  margin: 0;        /* сбрасываем любые отступы */
 }

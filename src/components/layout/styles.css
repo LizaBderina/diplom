@@ -3,21 +3,45 @@
 
 /* Header Styles */
 .header {
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e6e6e6;
+  /* сбросим старый флекc и паддинги */
+  display: block;
+  padding: 0;
+  background-color: var(--bg-main);
+  /* заставим header перекрывать фон/картинки баннера */
+  z-index: 10;
+}
+
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 15px 20px;
-  box-sizing: border-box;
-  border-bottom: 1px solid #e6e6e6;
-  gap: 30px; /* Отступ между всеми элементами хедера */
+  gap: 30px;
+  /* как было */
+  padding: 15px 0;
+  /* прежний vertical padding */
+}
+
+.header-inner .logo-link {
+  margin-right: 30px;
+}
+
+.header-inner .header-contacts {
+  margin-right: 50px;
+}
+
+.header-inner .header-nav {
+  margin-right: 50px;
 }
 
 /* Стили для логотипа */
 .logo-link {
   display: inline-block;
   text-decoration: none;
-  margin-right: 30px; /* Отступ от логотипа до контактов */
+  margin-right: 30px;
+  /* Отступ от логотипа до контактов */
 }
 
 .header-logo {
@@ -34,8 +58,10 @@
   font-weight: var(--font-weight-regular);
   line-height: 1.5;
   text-align: left;
-  margin-right: 50px; /* Добавляем отступ между контактами и навигацией */
-  flex-shrink: 0; /* Предотвращаем сжатие блока контактов */
+  margin-right: 50px;
+  /* Добавляем отступ между контактами и навигацией */
+  flex-shrink: 0;
+  /* Предотвращаем сжатие блока контактов */
 }
 
 .contact-link {
@@ -51,8 +77,10 @@
   border: 1px solid var(--color-primary);
   border-radius: 20px;
   padding: 10px 20px;
-  margin-right: 50px; /* Отступ между навигацией и кнопкой "Заказать звонок" */
-  flex: 1; /* Позволяем блоку навигации занимать доступное пространство */
+  margin-right: 50px;
+  /* Отступ между навигацией и кнопкой "Заказать звонок" */
+  flex: 1;
+  /* Позволяем блоку навигации занимать доступное пространство */
 }
 
 .nav-link {
@@ -90,7 +118,8 @@
   border: 1px solid var(--color-primary);
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-  pointer-events: none; /* Важно: предотвращает "мигание" при наведении */
+  pointer-events: none;
+  /* Важно: предотвращает "мигание" при наведении */
 }
 
 /* Увеличиваем зазор для легкого перемещения между кнопкой и выпадающим меню */
@@ -108,7 +137,8 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-  pointer-events: auto; /* Включаем взаимодействие при отображении */
+  pointer-events: auto;
+  /* Включаем взаимодействие при отображении */
 }
 
 /* Дополнительно делаем меню активным при наведении на него самого */
@@ -150,7 +180,8 @@
 }
 
 .dropdown-container:hover .dropdown-toggle::after {
-  transform: rotate(180deg); /* Стрелка поворачивается при наведении */
+  transform: rotate(180deg);
+  /* Стрелка поворачивается при наведении */
 }
 
 .dropdown-container:hover .dropdown-toggle {
@@ -162,8 +193,10 @@
   background-color: #333;
   border-radius: 10px;
   padding: 15px 20px;
-  white-space: nowrap; /* Предотвращение переноса текста */
-  flex-shrink: 0; /* Предотвращаем сжатие кнопки */
+  white-space: nowrap;
+  /* Предотвращение переноса текста */
+  flex-shrink: 0;
+  /* Предотвращаем сжатие кнопки */
 }
 
 .callback-button-link {
@@ -176,7 +209,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  white-space: nowrap; /* Дополнительно предотвращаем перенос текста */
+  white-space: nowrap;
+  /* Дополнительно предотвращаем перенос текста */
 }
 
 /* Стили для модального окна */
@@ -289,7 +323,8 @@
 .submit-button {
   display: block;
   width: 100%;
-  background-color: #776556; /* Цвет кнопки из скриншота */
+  background-color: #776556;
+  /* Цвет кнопки из скриншота */
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -301,7 +336,8 @@
 }
 
 .submit-button:hover {
-  background-color: #665548; /* Чуть темнее при наведении */
+  background-color: #665548;
+  /* Чуть темнее при наведении */
 }
 
 /* Стили для отключенной кнопки при отправке */
@@ -314,7 +350,7 @@
 
 /* Состояние загрузки для полей формы */
 .phone-input:disabled,
-.checkbox-container input:disabled + .checkbox-text {
+.checkbox-container input:disabled+.checkbox-text {
   opacity: 0.7;
 }
 
@@ -332,16 +368,41 @@
 
 /* Анимация для привлечения внимания к ошибке */
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-  20%, 40%, 60%, 80% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
 /* Индикатор загрузки (опционально) */
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.6; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Footer Styles */
@@ -351,6 +412,7 @@
   padding: 0;
   box-sizing: border-box;
   border-top: 1px solid #e6e6e6;
+  background-color: var(--bg-main);
   margin-top: 40px;
 }
 
@@ -461,6 +523,7 @@
   font-weight: 400;
   text-align: center;
 }
+
 /* Footer Styles */
 .footer {
   position: relative;
@@ -526,6 +589,7 @@
   text-align: center;
   padding: 15px 20px;
 }
+
 /* Responsive Adjustments */
 /* Мобильные устройства */
 @media (max-width: 767px) {
@@ -535,18 +599,18 @@
     gap: 15px;
     padding: 15px 20px;
   }
-  
+
   .logo-link {
     margin-right: 0;
   }
-  
+
   .header-contacts {
     margin-right: 0;
     order: 3;
     width: 100%;
     text-align: center;
   }
-  
+
   .header-nav {
     order: 4;
     width: 100%;
@@ -554,16 +618,16 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   .callback-button {
     order: 2;
     padding: 12px 15px;
   }
-  
+
   .callback-button-link {
     font-size: 14px;
   }
-  
+
   .dropdown-menu {
     position: static;
     box-shadow: none;
@@ -572,28 +636,28 @@
     transform: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
-  
+
   .dropdown-container.active .dropdown-menu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
-  
+
   .modal-content {
     padding: 20px;
   }
-  
+
   .footer-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 30px;
   }
-  
+
   .footer-social-container {
     align-items: center;
   }
-  
+
   .footer-nav {
     flex-direction: column;
     gap: 10px;
@@ -605,19 +669,19 @@
   .header {
     padding: 20px 40px;
   }
-  
+
   .header-contacts {
     margin-right: 30px;
   }
-  
+
   .header-nav {
     margin-right: 30px;
   }
-  
+
   .footer-content {
     padding: 30px 40px;
   }
-  
+
   .footer-bottom {
     padding: 20px 40px;
   }
@@ -628,7 +692,7 @@
   .header {
     padding: 20px 180px;
   }
-  
+
   .nav-link {
     padding: 5px 10px;
   }
@@ -642,17 +706,17 @@
     background-color: var(--color-primary);
     border-radius: 15px;
   }
-  
+
   .dropdown-toggle.active {
     color: #ffffff;
     background-color: var(--color-primary);
     border-radius: 15px;
   }
-  
+
   .footer-content {
     padding: 40px 180px;
   }
-  
+
   .footer-bottom {
     padding: 20px 180px;
   }

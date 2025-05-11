@@ -7,9 +7,12 @@
   box-sizing: border-box;
 }
 
+html, body, #root {
+  background-color: var(--bg-main);
+}
+
 html {
   scroll-behavior: smooth;
-  background-color: #F4F3EF;
 }
 
 /* —— Базовые стили ————————————————————— */
@@ -49,4 +52,31 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ================================================== */
+/*  HEADER & FOOTER FULLWIDTH OVERRIDE — игнор padding */
+/* ================================================== */
+.header,
+.footer {
+  /* сделаем элемент на всю ширину вьюпорта */
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  /* свои бордеры/фоны/тени по необходимости */
+}
+
+/* снова упакуем содержимое в «контейнер» для центровки: */
+.header-inner,
+.footer-inner {
+  display: flex;           /* или ваш flex-layout */
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max-width); /* например 1280px */
+  margin: 0 auto;
+  padding: 0 20px;         /* если нужны внутренние отступы */
 }

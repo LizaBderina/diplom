@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import routes from "./routes";
 import "./styles/global.css";
+import './styles/variables.css'; 
 
 const router = createBrowserRouter(routes);
 

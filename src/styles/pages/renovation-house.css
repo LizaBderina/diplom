@@ -1,0 +1,419 @@
+/* src/styles/pages/renovation-house.css */
+@import '../variables.css';
+
+/* -------------------------------------------------- */
+/*  ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ                           */
+/* -------------------------------------------------- */
+.renovation-house-page {
+  background-color: #F4F3EF;
+  color: #333;
+  font-family: var(--font-family-main);
+}
+
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 30px;
+  }
+  .sub-title {
+    font-size: 18px;
+  }
+  .banner-description {
+    font-size: 14px;
+  }
+  .banner-location {
+    font-size: 13px;
+  }
+  .primary-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .advantage-title {
+    font-size: 18px;
+  }
+  .advantage-details p {
+    font-size: 14px;
+  }
+  .section-title {
+    font-size: 24px;
+  }
+  .video-container iframe {
+    height: auto;
+  }
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .video-caption {
+    font-size: 15px;
+  }
+}
+
+/* -------------------------------------------------- */
+/*                          HERO                       */
+/* -------------------------------------------------- */
+.main-banner {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.main-banner-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('/public/img/renovation-banner.jpeg') center/cover no-repeat;
+  filter: brightness(0.7);
+}
+.banner-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(42, 42, 40, 0.6);
+}
+.banner-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+.main-title {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.sub-title {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.banner-description,
+.banner-location {
+  margin-bottom: 8px;
+}
+.primary-button {
+  background-color: var(--color-primary);
+  border: none;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.primary-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* -------------------------------------------------- */
+/*                        ПРЕИМУЩЕСТВА                */
+/* -------------------------------------------------- */
+.advantages-section {
+  padding: 60px 0;
+}
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+.advantage-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.advantage-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.advantage-icon {
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-right: 12px;
+}
+.advantage-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.advantage-details p {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+/* -------------------------------------------------- */
+/*                        КАЛЬКУЛЯТОР                */
+/* -------------------------------------------------- */
+#calculator {
+  padding: 60px 0;
+}
+
+/* -------------------------------------------------- */
+/*                    НАШ ПОДХОД (ВИДЕО)             */
+/* -------------------------------------------------- */
+.our-approach-section {
+  padding: 60px 0;
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* -------------------------------------------------- */
+/*              ВНИМАТЕЛЬНЫ КО ВСЕМ ДЕТАЛЯМ (ВИДЕО)  */
+/* -------------------------------------------------- */
+.details-attention-section {
+  padding: 60px 0;
+}
+.details-attention-section .videos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, 360px) !important;
+    justify-content: center !important;
+    gap: 24px !important;
+  }
+  
+  .details-attention-section .video-item {
+    width: 360px !important;
+    margin: 0 auto !important;
+  }
+  
+  .details-attention-section .video-thumbnail {
+    /* убираем старые паддинги */
+    padding-bottom: 0 !important;
+    /* фиксируем размеры прямо в px */
+    width: 360px !important;
+    height: 636px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .details-attention-section .video-thumbnail iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+  }
+.details-attention-section .video-caption {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+/* -------------------------------------------------- */
+/*                  ВАРИАНТЫ РЕМОНТА (ПЛИТКИ)        */
+/* -------------------------------------------------- */
+.renovation-options-section {
+  padding: 60px 0;
+}
+.options-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.option-card {
+  position: relative;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.option-card:hover {
+  transform: translateY(-8px);
+}
+.option-image {
+  width: 100%;
+  display: block;
+}
+.option-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 16px;
+}
+.option-title {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.option-desc {
+  font-size: 14px;
+}
+
+/* -------------------------------------------------- */
+/*               ЗАКАЗАТЬ ДИЗАЙН-ПРОЕКТ              */
+/* -------------------------------------------------- */
+.design-order-section {
+  background: var(--color-secondary-light);
+  padding: 60px 0;
+}
+.design-order-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------- */
+/*                 СТОИМОСТЬ РЕМОНТА                */
+/* -------------------------------------------------- */
+.price-factors-section {
+  padding: 60px 0;
+}
+.factors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+.factor-item {
+  display: flex;
+  align-items: center;
+}
+.factor-icon {
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-right: 8px;
+}
+
+/* -------------------------------------------------- */
+/*                      ФУТЕР                        */
+/* -------------------------------------------------- */
+.footer {
+  background: #fff;
+  padding: 40px 0;
+}
+
+/* -------------------------------------------------- */
+/*                  БАЗОВЫЕ МЕДИА-ЗАПРОСЫ           */
+/* -------------------------------------------------- */
+@media (max-width: 992px) {
+  .videos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+  .options-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 576px) {
+  .banner-content {
+    text-align: center;
+  }
+  .main-title {
+    font-size: 30px;
+  }
+  .sub-title {
+    font-size: 18px;
+  }
+  .banner-description {
+    font-size: 14px;
+  }
+  .banner-location {
+    font-size: 13px;
+  }
+  .primary-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .advantage-title {
+    font-size: 18px;
+  }
+  .advantage-details p {
+    font-size: 14px;
+  }
+  .section-title {
+    font-size: 24px;
+  }
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .video-caption {
+    font-size: 15px;
+  }
+}
+
+/* -------------------------------------------------- */
+/*  ВЫРАВНИВАЕМ И ПОДГОНЯЕМ РАЗМЕРЫ ВИДЕО-КАРТОЧЕК    */
+/* -------------------------------------------------- */
+.details-attention-section .videos-grid {
+  display: grid;
+  /* минимум 280px на колонку, а дальше растягивать под ширину контейнера */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;              /* расстояние между карточками */
+  margin-top: 32px;
+}
+
+.details-attention-section .video-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* центрируем подпись */
+}
+
+.details-attention-section .video-thumbnail {
+  position: relative;
+  width: 100%;            /* тянем на всю ширину колонки */
+  /* сохраняем пропорции 16:9 */
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.details-attention-section .video-thumbnail iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.details-attention-section .video-caption {
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #4a4a4a;
+  line-height: 1.3;
+  /* чтобы все подписи выравнивались по нижнему краю,
+     можно задать фиксированную высоту, если подписи разной длины */
+  /* height: 2.6em; overflow: hidden; */
+}
+
+/* Адаптив: на узких экранах — две колонки, затем одна */
+@media (max-width: 900px) {
+  .details-attention-section .videos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .details-attention-section .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}

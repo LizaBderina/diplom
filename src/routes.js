@@ -10,6 +10,7 @@ import EquipmentPage from "./pages/EquipmentPage";
 import CollaborationPage from "./pages/CollaborationPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import RenovationApartmentPage from "./pages/RenovationApartmentPage";
+import RenovationHousePage from "./pages/RenovationHousePage";
 
 
 const routes = [
@@ -57,6 +58,11 @@ const routes = [
   {
     path: "/ремонт-квартиры-под-ключ",
     element: <RenovationApartmentPage />,
+  },
+  // Добавляем новый маршрут для ремонта домов
+  {
+    path: "/ремонт-домов-под-ключ",
+    element: <RenovationHousePage />,
   },
 ];
 

@@ -10,6 +10,7 @@ import CalculatorSection from "../components/sections/CalculatorSection";
 import PortfolioSection from "../components/sections/PortfolioSection";
 import "../styles/pages/homepage.css";
 import PromoBanner from "../components/sections/PromoBanner";
+import { NavLink } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -178,8 +179,8 @@ const HomePage = () => {
           </div>
           
           <div className="video-controls">
-            <button className="video-control prev-button">Предыдущая</button>
-            <button className="video-control next-button">Следующая</button>
+            <NavLink to="/video-blog" className="dropdown-item"> Видеоблог</NavLink>
+            <NavLink to="/новости" className="dropdown-item">Новости</NavLink>
           </div>
         </div>
       </section>

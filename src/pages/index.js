@@ -7,3 +7,5 @@ export { default as ArticlePage } from './ArticlePage';
 export { default as RenovationPage } from './RenovationPage';
 export { default as EquipmentPage } from './EquipmentPage';
 export { default as CollaborationPage } from './CollaborationPage';
+export { default as RenovationApartmentPage } from './RenovationApartmentPage';
+export { default as RenovationHousePage } from './RenovationHousePage';
