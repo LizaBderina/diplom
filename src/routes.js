@@ -11,7 +11,7 @@ import CollaborationPage from "./pages/CollaborationPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import RenovationApartmentPage from "./pages/RenovationApartmentPage";
 import RenovationHousePage from "./pages/RenovationHousePage";
-
+import UserProfile from "./pages/UserProfile";
 
 const routes = [
   {
@@ -63,6 +63,10 @@ const routes = [
   {
     path: "/ремонт-домов-под-ключ",
     element: <RenovationHousePage />,
+  },
+  {
+    path: "/личный-кабинет",
+    element: <UserProfile/>,
   },
 ];
 

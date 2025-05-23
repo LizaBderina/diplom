@@ -17,50 +17,66 @@ const HomePage = () => {
     <div className="homepage">
       <Header />
 
-      {/* Главный баннер */}
       <section className="main-banner">
-        <div className="container">
-          <div className="banner-content">
-            <h2 className="main-title">
-              ДИЗАЙНЫ ИНТЕРЬЕРА<br />
-              И РЕАЛИЗАЦИЯ "ПОД<br />
-              КЛЮЧ"
-            </h2>
-            <button className="order-button">Заказать</button>
+        <div className="main-banner__inner">
+          <div className="main-banner__text">
+            <h1 className="main-title">
+              ДИЗАЙНЫ<br />
+              ИНТЕРЬЕРА<br />
+              И РЕАЛИЗАЦИЯ<br />
+              "ПОД КЛЮЧ"
+            </h1>
+            <button
+              className="order-button"
+              onClick={() => {
+                const el = document.getElementById("calculator-section");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Заказать
+            </button>
           </div>
-          <div className="banner-images">
-            <div className="image-container">
-              <img className="banner-image bedroom" alt="Спальня" src="img/bedroom.png" />
-              <img className="banner-image kitchen" alt="Кухня" src="img/kitchen.png" />
-            </div>
+          <div className="main-banner__images">
+            <img
+              className="main-banner__img main-banner__img--rect"
+              alt="Интерьер спальни"
+              src="img/bedroom.png"
+              loading="lazy"
+            />
+            <img
+              className="main-banner__img main-banner__img--square"
+              alt="Интерьер кухни"
+              src="img/kitchen.png"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
 
       {/* Секция опыта */}
       <ExperienceSection />
-      
+
       {/* Блок с услугами дизайна */}
       <SimpleDesignServices />
-      
+
       {/* Кому подходят услуги */}
       <ServicesSection />
-      
+
       {/* Калькулятор */}
-      <section className="calculator-container">
+      <section className="calculator-container" id="calculator-section">
         <div className="container">
           <CalculatorSection />
         </div>
       </section>
-      
+
       {/* Реализованные проекты */}
       <PortfolioSection />
-      
+
       {/* Наши преимущества */}
       <section className="advantages-section">
         <div className="container">
           <h2 className="section-title">НА РЫНКЕ МНОГО ДИЗАЙНЕРОВ И СТУДИЙ. ЧЕМ МЫ ЛУЧШЕ КОНКУРЕНТОВ?</h2>
-          
+
           <div className="advantages-list">
             <div className="advantage-item">
               <div className="advantage-number">1</div>
@@ -71,7 +87,7 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="advantage-item">
               <div className="advantage-number">2</div>
               <div className="advantage-content">
@@ -81,7 +97,7 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="advantage-item">
               <div className="advantage-number">3</div>
               <div className="advantage-content">
@@ -91,7 +107,7 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="advantage-item">
               <div className="advantage-number">4</div>
               <div className="advantage-content">
@@ -103,7 +119,7 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="advantage-item">
               <div className="advantage-number">5</div>
               <div className="advantage-content">
@@ -122,7 +138,7 @@ const HomePage = () => {
       {/* Секция заказа дизайн-проекта - используем консультационную форму */}
       <section className="design-order-section">
         <div className="container">
-          <ConsultationForm 
+          <ConsultationForm
             title="Заказать дизайн проект"
             subtitle="При заказе ремонта «под ключ», вы получаете дизайн-проект в подарок*"
             buttonText="Получить смету"
@@ -132,15 +148,15 @@ const HomePage = () => {
           />
         </div>
       </section>
-      
+
       {/* Баннер с домом */}
       <PromoBanner />
-      
+
       {/* Видеоблог и новости */}
       <section className="video-blog-section">
         <div className="container">
           <h2 className="section-title">ВИДЕОБЛОГ И НОВОСТИ</h2>
-          
+
           <div className="video-grid">
             <div className="video-item video-item-large">
               <div className="video-content">
@@ -177,14 +193,19 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="video-controls">
             <NavLink to="/video-blog" className="dropdown-item"> Видеоблог</NavLink>
             <NavLink to="/новости" className="dropdown-item">Новости</NavLink>
           </div>
         </div>
       </section>
-
+      {/* <div>
+      <MapboxMap />
+    </div>
+    <div>
+      <YandexMapReact />
+    </div> */}
       <Footer />
     </div>
   );

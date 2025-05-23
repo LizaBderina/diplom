@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-
 import '../../styles/components/promo-banner.css';
-import YandexMapReact from './YandexMapReact';   
-
+import YandexMapReact from './YandexMapReact';
+import MapboxMap from '../MapboxMap';
+import PlotsMap from '../PlotsMap';
 const PromoBanner = () => {
   const [showMap, setShowMap] = useState(false);
 
@@ -12,7 +12,6 @@ const PromoBanner = () => {
       <div className="container">
         <AnimatePresence mode="wait">
           {showMap ? (
-            /* ---------- КАРТА ---------- */
             <motion.div
               key="map"
               className="promo-inner map-mode"
@@ -21,9 +20,14 @@ const PromoBanner = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
             >
-              <YandexMapReact coords={[55.7558, 37.6176]} zoom={13} />
+              <div className="map-wrapper">
+                <PlotsMap 
+                  coords={[55.830, 37.137]} // Широта, долгота (например, центр bounds)
+                  zoom={16}                 // Подбери зум по масштабу участка
+                  // styleUrl="mapbox://styles/igorsergeevichisit/cmaqlgb1001oo01s39jnf3z7b"
+                />
 
-              {/* вернуться к баннеру */}
+              </div>
               <button
                 className="promo-button back-btn"
                 onClick={() => setShowMap(false)}
@@ -32,7 +36,6 @@ const PromoBanner = () => {
               </button>
             </motion.div>
           ) : (
-            /* ---------- БАННЕР ---------- */
             <motion.div
               key="banner"
               className="promo-inner"
@@ -43,16 +46,14 @@ const PromoBanner = () => {
             >
               <div className="promo-content">
                 <h2 className="promo-title">
-                  Создайте своё идеальное пространство
-                  <br />с нашими экспертами!
+                  Создайте своё идеальное пространство <br />
+                  с нашими экспертами!
                 </h2>
-
                 <button
                   className="promo-button"
                   onClick={() => setShowMap(true)}
                 >
-                  Покупай участок в коттеджном посёлке
-                  бизнес-класса «ПАДОВЫ ОЗЁРА»
+                  Покупай участок в коттеджном посёлке бизнес-класса «ПАДОВЫ ОЗЁРА»
                 </button>
               </div>
             </motion.div>

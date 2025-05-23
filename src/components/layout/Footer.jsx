@@ -1,69 +1,57 @@
-// src/components/layout/Footer.jsx
 import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import "./styles.css";
 
-export const Footer = ({ className }) => (
-  <footer className={`footer ${className || ""}`}>
-    {/* Верхняя часть футера: логотип и социальные ссылки */}
-    <div className="container footer-inner">
-      <Link to="/" className="logo-link">
+export const Footer = () => (
+  <footer className="footer">
+    <div className="footer-inner">
+      {/* ЛОГОТИП */}
+      <a href="/" className="logo-link">
         <img
           src="/icons/logo.svg"
-          alt="Александра Батенькова"
+          alt="Студия дизайна Александра Батенькова"
           className="footer-logo"
         />
-      </Link>
-
+      </a>
+      {/* ТЕЛЕФОН */}
+      <div className="contact-number">8-800-555-35-35</div>
+      {/* СОЦСЕТИ */}
       <div className="footer-social-container">
-        <div className="contact-number">8-800-555-35-35</div>
         <div className="social-icons">
           <a
-            className="social-link telegram-link"
-            href="https://t.me/batenkov_stroyka_proekty"
-            rel="noopener noreferrer"
+            href="https://t.me/"
             target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label="Telegram"
           >
             <img
-              className="social-icon"
+              src="/icons/telegram.svg"
               alt="Telegram"
-              src="/img/free-icon-telegram-2111710.png"
+              className="social-icon"
             />
           </a>
           <a
-            className="social-link vk-link"
-            href="https://vk.com/designer_batenkov?from=search"
-            rel="noopener noreferrer"
+            href="https://vk.com/"
             target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label="VK"
           >
             <img
+              src="/icons/vk.svg"
+              alt="VK"
               className="social-icon"
-              alt="ВКонтакте"
-              src="/img/free-icon-message-15047438.png"
             />
           </a>
         </div>
       </div>
     </div>
-
-    {/* Разделитель */}
-    <div className="footer-divider" />
-
-    {/* Нижняя часть футера: копирайт */}
-    <div className="container footer-inner footer-bottom">
-      <small className="footer-copyright">
-        © 2024 «Indesign» — сайт создан при поддержке студентов группы ИЭ-21:
+    <div className="footer-divider"></div>
+    <div className="footer-bottom">
+      <div className="footer-copyright">
+        © 2024 «Indesign» — сайт создан при поддержке студентов группы ИЭ-21:<br />
         Бедерина Елизавета &amp; Богданов Роман
-      </small>
+      </div>
     </div>
   </footer>
 );
-
-Footer.propTypes = {
-  className: PropTypes.string,
-};
-
-Footer.defaultProps = {
-  className: "",
-};

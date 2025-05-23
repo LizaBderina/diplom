@@ -1,0 +1,166 @@
+/* UserProfile.css */
+@import '../../styles/variables.css';
+
+.profile-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.profile-header {
+  margin-bottom: 40px;
+}
+
+.profile-name {
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.profile-content {
+  margin-bottom: 60px;
+}
+
+.profile-tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-tab {
+  padding: 12px 30px;
+  font-size: 20px;
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-text);
+  border-bottom: 2px solid transparent;
+}
+
+.profile-tab.active {
+  font-weight: var(--font-weight-bold);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.tab-content {
+  background-color: #EFEFEF;
+  border-radius: 8px;
+  min-height: 300px;
+  padding: 20px;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  color: #777;
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* Футер профиля */
+.profile-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.profile-footer-left .footer-logo {
+  max-height: 70px;
+}
+
+.profile-footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contact-number {
+  font-size: 24px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.profile-copyright {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  padding: 15px 0;
+  margin-top: 20px;
+  border-top: 1px solid #e6e6e6;
+}
+
+/* Адаптивные стили */
+@media (max-width: 767px) {
+  .profile-container {
+    padding: 20px 15px;
+  }
+
+  .profile-name {
+    font-size: 24px;
+  }
+
+  .profile-tabs {
+    gap: 10px;
+  }
+
+  .profile-tab {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .tab-content {
+    min-height: 200px;
+  }
+
+  .profile-footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profile-footer-right {
+    align-items: center;
+  }
+
+  .contact-number {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .profile-container {
+    padding: 25px;
+  }
+
+  .profile-name {
+    font-size: 28px;
+  }
+
+  .profile-tab {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+}

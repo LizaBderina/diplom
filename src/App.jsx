@@ -9,7 +9,7 @@ const router = createBrowserRouter(routes);
 
 function App() {
   useEffect(() => {
-    console.log('Yandex Key:', process.env.REACT_APP_YANDEX_API_KEY);
+    console.log('TOKEN:', process.env.REACT_APP_MAPBOX_TOKEN);
   }, []);
 
   return <RouterProvider router={router} />;
