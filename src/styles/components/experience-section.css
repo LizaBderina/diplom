@@ -3,7 +3,7 @@
 /* 1. Секция опыта */
 .experience-section {
   padding: 60px 0;
-  background-color: #f5f2ed;
+  background-color: var(--bg-main);
 }
 
 .experience-section .section-title {

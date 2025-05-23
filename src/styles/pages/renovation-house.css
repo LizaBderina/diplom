@@ -5,7 +5,7 @@
 /*  ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ                           */
 /* -------------------------------------------------- */
 .renovation-house-page {
-  background-color: #F4F3EF;
+  background-color: var(--bg-main);
   color: #333;
   font-family: var(--font-family-main);
 }
@@ -118,7 +118,7 @@
   gap: 32px;
 }
 .advantage-item {
-  background: #fff;
+  background: var(--color-light);
   border-radius: 8px;
   padding: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -298,7 +298,7 @@
 /*                      ФУТЕР                        */
 /* -------------------------------------------------- */
 .footer {
-  background: #fff;
+  background: var(--bg-main);
   padding: 40px 0;
 }
 

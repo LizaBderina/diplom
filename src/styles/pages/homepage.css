@@ -133,7 +133,7 @@ body {
   padding: 16px 40px;
   border-radius: 12px;
   font-size: 1.1rem;
-  background: var(--color-accent, #c9baa6);
+  background-color: var(--color-primary);
   color: #fff;
   border: none;
   box-shadow: 0 4px 24px rgba(175, 161, 144, 0.15);

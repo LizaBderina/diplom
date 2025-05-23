@@ -504,7 +504,7 @@ body.mobile-menu-open {
   padding: 0;
   box-sizing: border-box;
   border-top: 1px solid #e6e6e6;
-  background-color: var(--bg-main);
+  background: var(--bg-main);
   margin-top: 40px;
 }
 
@@ -619,6 +619,7 @@ body.mobile-menu-open {
 
 /* Адаптив для футера */
 @media (max-width: 767px) {
+
   .footer-inner,
   .footer-content {
     flex-direction: row;

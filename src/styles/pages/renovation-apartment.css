@@ -5,7 +5,7 @@
 /*  ОСНОВНЫЕ СТИЛИ СТРАНИЦЫ                           */
 /* -------------------------------------------------- */
 .renovation-apartment-page {
-  background-color: #F4F3EF;
+  background-color: var(--bg-main);
   color: #333;
   font-family: var(--font-family-main);
 }
@@ -78,6 +78,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -173,12 +174,14 @@
   margin-bottom: 8px;
   line-height: 1.5;
 }
+
 /* Стили для списка с номерами в кружках */
 .circle-numbered-list {
   list-style-type: none;
   padding: 0;
   margin: 0 0 26px;
-  counter-reset: none; /* Сброс счетчика встроенной нумерации, если она есть */
+  counter-reset: none;
+  /* Сброс счетчика встроенной нумерации, если она есть */
 }
 
 .circle-numbered-list li {
@@ -187,7 +190,8 @@
   margin-bottom: 14px;
   padding-left: 0;
   position: relative;
-  counter-increment: none; /* Отключаем инкремент счетчика */
+  counter-increment: none;
+  /* Отключаем инкремент счетчика */
 }
 
 .circle-number {
@@ -197,7 +201,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #7a868f;;
+  background: #7a868f;
+  ;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -214,7 +219,8 @@
 
 /* Дополнительные стили для списка */
 .info-text .circle-numbered-list li::before {
-  display: none; /* Убираем стандартные маркеры или номера, если они появляются */
+  display: none;
+  /* Убираем стандартные маркеры или номера, если они появляются */
 }
 
 
@@ -238,6 +244,7 @@ h3::before {
   background: var(--color-primary, #776556);
   opacity: 0.85;
 }
+
 /* -------------------------------------------------- */
 /*  ВАРИАНТЫ РЕМОНТА – КАРТОЧКИ                       */
 /* -------------------------------------------------- */
@@ -349,7 +356,7 @@ h3::before {
 
 .order-button {
   padding: 10px 28px;
-  background: transparent;
+
   border: 1px solid #fff;
   color: #fff;
   font-size: 15px;
@@ -437,7 +444,7 @@ h3::before {
 }
 
 .design-package {
-
+  background-color: var(--color-light);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
@@ -770,12 +777,29 @@ h3::before {
   box-shadow: 0 6px 15px rgba(86, 119, 111, 0.15);
 }
 
-.instagram { background-image: url('/public/icons/instagram-icon.svg'); }
-.youtube { background-image: url('/public/icons/youtube-icon.svg'); }
-.telegram { background-image: url('/public/icons/telegram-icon.svg'); }
-.vk { background-image: url('/public/icons/vk-icon.svg'); }
-.rutube { background-image: url('/public/icons/rutube-icon.svg'); }
-.pinterest { background-image: url('/public/icons/pinterest-icon.svg'); }
+.instagram {
+  background-image: url('/public/icons/instagram-icon.svg');
+}
+
+.youtube {
+  background-image: url('/public/icons/youtube-icon.svg');
+}
+
+.telegram {
+  background-image: url('/public/icons/telegram-icon.svg');
+}
+
+.vk {
+  background-image: url('/public/icons/vk-icon.svg');
+}
+
+.rutube {
+  background-image: url('/public/icons/rutube-icon.svg');
+}
+
+.pinterest {
+  background-image: url('/public/icons/pinterest-icon.svg');
+}
 
 /* -------------------------------------------------- */
 /*  МЕДИА-ЗАПРОСЫ                                     */
@@ -784,31 +808,31 @@ h3::before {
   .main-title {
     font-size: 42px;
   }
-  
+
   .sub-title {
     font-size: 32px;
   }
-  
+
   .options-row {
     display: grid;
     grid-template-columns: 1fr;
   }
-  
+
   .design-order-grid,
   .specialist-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .design-title {
     font-size: 28px;
   }
-  
+
   .specialist-photo-container {
     max-width: 320px;
     margin: 0 auto;
   }
-  
+
   .banner-content {
     margin-left: 5%;
   }
@@ -818,49 +842,49 @@ h3::before {
   .main-title {
     font-size: 36px;
   }
-  
+
   .sub-title {
     font-size: 28px;
   }
-  
+
   .banner-description,
   .banner-location {
     font-size: 16px;
   }
-  
+
   .section-title {
     font-size: 28px;
   }
-  
+
   .factors-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .design-order-section,
   .call-specialist-section,
   .social-subscribe-section {
     padding: 60px 0;
   }
-  
+
   .design-package {
     padding: 20px;
   }
-  
+
   .specialist-title {
     font-size: 20px;
   }
-  
+
   .specialist-description,
   .social-text {
     font-size: 16px;
   }
-  
+
   .social-icon {
     width: 50px;
     height: 50px;
     background-size: 25px;
   }
-  
+
   .info-text {
     font-size: 16px;
   }
@@ -878,17 +902,18 @@ h3::before {
   .info-text ul li::before {
     top: -1px;
   }
-  
+
   .banner-content {
     text-align: center;
     margin: 0 auto;
   }
+
   .circle-number {
     width: 24px;
     height: 24px;
     font-size: 13px;
   }
-  
+
   .list-text {
     font-size: 15px;
   }
@@ -898,24 +923,24 @@ h3::before {
   .main-title {
     font-size: 30px;
   }
-  
+
   .sub-title {
     font-size: 24px;
   }
-  
+
   .design-features {
     gap: 15px;
   }
-  
+
   .feature-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .feature-text h4 {
     font-size: 16px;
   }
-  
+
   .advantage-details {
     padding-left: 25px;
   }
